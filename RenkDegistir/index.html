@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renk Değiştiren Buton</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+
+        #changeColorButton {
+            
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Arka Plan Rengini Değiştir</h2>
+    <button id="changeColorButton" onclick="changeBackgroundColor()">Rengi Değiştir</button>
+
+    <script>
+        function changeBackgroundColor() {
+            // Rastgele bir renk oluşturmak için hexadecimal renk kodu kullanılıyor.
+            var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+            // Body elementinin arka plan rengini değiştirme
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
