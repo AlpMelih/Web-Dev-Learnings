@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zikirmatik</title>
+    <style>
+        h1{
+            margin-bottom: 60px;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100VH;
+            margin: 0;
+        }
+        #sayi{
+            font-size: 24px;
+        }
+        button{
+            font-size: 15px;
+            margin: 5px;
+        }
+        .button-container{
+             display: flex;
+             flex-direction: row;
+             justify-content: space-around;
+             align-items: center;
+ 
+        }
+    </style>
+</head>
+<body>
+    <h1>Saymaya Basla</h1>
+    <p id="sayi">0</p>
+    <div class="button-container">
+    <button onclick="arttir()">Arttır</button>
+    <button onclick="azalt()">Azalt</button>
+    <button onclick="reset()">Sıfırla</button>
+    </div>
+    <button onclick="renkDegis()">Renk Değiştir</button>
+    <script>
+        var sayi=0;
+        function arttir() {
+           sayi++;
+           document.getElementById("sayi").innerHTML=sayi;
+        }
+        function azalt() {
+            if(sayi>0){
+        sayi--;
+        document.getElementById("sayi").innerHTML=sayi;
+        }
+    }
+        function reset(){
+            sayi=0;
+            document.getElementById("sayi").innerHTML=sayi;
+        }
+        function renkDegis(){
+            var rastgeleRenk="#"+Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor=rastgeleRenk;
+            }
+   
+   </script>
+</body>
+</html>
