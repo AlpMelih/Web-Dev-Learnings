@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdest Al</title>
+   <style>
+    body {
+        background-color: aqua;
+    }
+    #besmele{
+        padding-top: 30px;
+ 
+        text-align: center;
+    }
+    #niyet{
+        padding-top: 30px;
+
+        text-align: center;
+    }
+    #abdest{
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    display: flex;}
+    #abdestbuton{
+        text-align: center;
+        margin-top: 20px;
+        width: 200px;
+        height: 100px;
+        font-size: large;
+    }
+    .imageArea{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+   </style>
+<body>
+    
+    <h1 id="besmele">EUZUBİLLAHİMİNEŞŞEYTANİRRACİM BİSMİLLAHİRRAHMANİRRAHİM</h1>
+    <h2 id="niyet">Niyet ettim niyet eyledim allah rızası için abdest almaya</h2>
+    <div class="imageArea">
+         <img id="abdest" src="images/sadırvan.jpg" alt="geç otur şöyle">
+    <button id="abdestbuton" onclick="changeImage()">ABDEST ALMAK İÇİN TIKLA</button>
+    </div>
+   
+    <script>
+        function changeImage() {
+        var image = document.getElementById("abdest")
+        var newImage = "images/dede.png"
+        image.src = newImage
+
+        var text=document.getElementById("niyet")
+        text.innerHTML = "ALLAH KABUL ETSİN"
+        text.style.fontSize="50px";
+        
+        var button=document.getElementById("abdestbuton")
+        button.style.display="none"
+        }
+
+        
+
+    </script>
+</body>
+</html>
