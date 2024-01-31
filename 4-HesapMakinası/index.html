@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinası</title>
+    <style>
+        #title {
+            display: flex;
+            justify-content: center;
+        }
+        #calculatorArea {
+            padding-top: 60px;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #calculator input[type="button"]{
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 30px;
+        }
+        #calculator input[type="text"]{
+            width: 250px;
+            height: 20px;
+        }
+        #calculator input[value="ENTER"]{
+            width: 250px;
+            height: 50px;
+            margin: 5px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Hesap Makinası</h1>
+    <div id="calculatorArea">
+    <form id="calculator" name="calculator">
+        <input type="text" name="textArea" id="textArea" disabled>
+        <br>
+        <input type="button" value="7" onclick="addToDisplay('7')">
+        <input type="button" value="8"onclick="addToDisplay('8')">
+        <input type="button" value="9" onclick="addToDisplay('9')">
+        <input type="button" value="-" onclick="addToDisplay('-')">
+        <br>
+        <input type="button" value="4" onclick="addToDisplay('4')">
+        <input type="button" value="5" onclick="addToDisplay('5')">
+        <input type="button" value="6" onclick="addToDisplay('6')">
+        <input type="button" value="+" onclick="addToDisplay('+')">
+        <br>
+        <input type="button" value="1" onclick="addToDisplay('1')">
+        <input type="button" value="2" onclick="addToDisplay('2')">
+        <input type="button" value="3" onclick="addToDisplay('3')">
+        <input type="button" value="/" onclick="addToDisplay('/')">
+        <br>
+        <input type="button" value="C" onclick="ClearDisplay()">
+        <input type="button" value="0" onclick="addToDisplay('0')">
+        <input type="button" value="." onclick="addToDisplay('.')">
+        <input type="button" value="*" onclick="addToDisplay('*')">
+        <br>
+        <input type="button" value="ENTER" onclick="calculate()">
+    </form>
+</div>
+    <script>
+       function addToDisplay(value) {
+      document.calculator.textArea.value += value;
+
+    }
+    function ClearDisplay(){
+        document.calculator.textArea.value = "";
+    }
+    function calculate(){
+        try{
+        document.calculator.textArea.value =eval(document.calculator.textArea.value)}
+        catch(Error){
+            document.calculator.textArea.value = "HATA"
+        }
+    }
+    </script>
+</body>
+</html>
