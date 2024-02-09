@@ -20,6 +20,7 @@ function addTask(task) {
     taskText.textContent = task;
     listItem.appendChild(taskText);
 
+    
     const editButton = document.createElement('button');
     editButton.textContent = 'Düzenle';
     listItem.appendChild(editButton);
@@ -35,7 +36,9 @@ function addTask(task) {
 
     deleteButton.addEventListener('click', function() {
         toDoList.removeChild(listItem);
+        removeFromLocalStorage(taskText.textContent);
     });
+    
 
     checkbox.addEventListener('change', function() {
         if (this.checked) {
